@@ -13,4 +13,4 @@ focused on rendering, while the reusable logic is
 Global state is useful for handling global states such as 
 user authentication (AuthContext),
 (CartContext), or theme settings. Global state management 
-provides a centralized way to manage shared state.n
+provides a centralized way to manage shared state.
