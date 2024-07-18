@@ -10,13 +10,21 @@ import solutions from './UIview/solutions';
 import Contact from './UIview/contact';
 import ResourceCenter from './UIview/resourceCenter';
 
+import { ChakraProvider } from '@chakra-ui/react'
+import FAQAccordion from './components/accordion/accordion';
+import LoginPage from './components/loginPage/login';
+import ConversionTable from './components/table/table';
+import ProductCard from './components/card/card';
+
 
 
 const App = () => {
 
     return (
+        <ChakraProvider> 
         <Router>
             <div>
+               
                 <NavBar />
                 <nav>
                     <Link to="/">Home</Link>
@@ -33,9 +41,12 @@ const App = () => {
                     <Route path="/resource-center" element={<ResourceCenter />} />
                 </Routes>
                 <Header />
+                
+                <ProductCard/>
                 <Footer />
             </div>
         </Router>
+        </ChakraProvider>
     );
 };
 

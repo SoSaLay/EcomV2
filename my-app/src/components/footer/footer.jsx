@@ -1,5 +1,7 @@
 import React from 'react';
-import styles from './styles.scss';  
+import styles from './styles.scss'; 
+import NavBar from '../navigation/navbar'; 
+
 // import facebookLogo from '/facebook-svgrepo-com.svg';
 // import instagramLogo from '../../public/instagram-svgrepo-com.svg';
 // import linkedinLogo from '../../public/linkedin-svgrepo-com.svg';
@@ -7,15 +9,18 @@ import styles from './styles.scss';
 
 const Footer = () => {
     return (
-        <div className={styles.footer}>
-            <div className={styles.wrapper}>
-                <div className={styles.left_block}>
-                    <img src='/facebook-svgrepo-com.svg' alt="Facebook Logo" width={24} height={24} />
-                    
-                <p>Hello Sulay</p>
-                </div> 
-            </div>
+
+      <footer className='footer'>
+        <NavBar/>
+        <div className='logos'>
+        <img src='/facebook-svgrepo-com.svg' alt="Facebook Logo" width={24} height={24} />
+        <img src='/instagram-svgrepo-com (1).svg' alt="Instagram Logo" width={24} height={24} />
+        <img src='/linkedin-svgrepo-com (2).svg' alt="Instagram Logo" width={24} height={24} />
+        <img src='/youtube-svgrepo-com.svg' alt="Instagram Logo" width={24} height={24} />
         </div>
+        <p>2024 MarketInfoZ: Privacy Policy</p>
+      </footer>
+
     );
 };
 

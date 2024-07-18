@@ -1,11 +1,14 @@
-import styles from './styles.scss'; 
+import React from "react";
+import NavBar from "../navigation/navbar";
+import styles from './styles.scss';
 
-const header = ({title})=>{
-return(
-    <div className={styles.header}>
-        <h2> {title} </h2>
-    </div>
-);{}
-};
+function Header(){
+return (
+<header className="header">
+   <h1 className="headerLogo">MarketInfoZ</h1>
+   <NavBar/>
+</header>
+);
+}
 
-export default header
+export default Header

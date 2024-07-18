@@ -7,15 +7,13 @@ import styles from "./styles.scss";
 const NavBar = () => {
 
 return (
-<nav className={styles.navbar}>
-<ul> 
-    <li> <Link to="/">Home</Link></li>
-    <li> <Link to="/meetUs">Meet Us</Link></li>
-    <li> <Link to="/solutions">Research Solutions</Link></li>
-    <li> <Link to="/contact">Contact</Link></li>
-    <li> <Link to="/ResourceCenter">Resource Center</Link></li>
+<nav className="nav">
 
-</ul>
+   <Link to="/" className="navLink">Home</Link>
+    <Link to="/meetUs" className="navLink">Meet Us</Link>
+    <Link to="/solutions" className="navLink">Research Solutions</Link>
+    <Link to="/contact" className="navLink">Contact</Link>
+    <Link to="/ResourceCenter" className="navLink">Resource Center</Link>
 
 </nav>
 )
