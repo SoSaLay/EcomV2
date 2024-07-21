@@ -1,15 +1,122 @@
-
-.nav {
+/* Navigation Section */
+.navbar {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #019354;
+  color: white;
+  height: 80px;
+  padding: 0 20px;
+  position: relative;
+  font-family: 'Oswald', sans-serif;
 
-  &.navLink {
-    text-decoration: none;
-    color: #333;
+  .navbar-left {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-right: 20px;
+      width: 30px; // Adjust size as needed
+      height: 30px; // Adjust size as needed
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #03ff92;
+      }
+    }
+  }
+
+  .brandName {
     font-weight: bold;
+    font-size: 2.0rem;
+    text-decoration: none;
+    color: white;
 
-    &:hover {
-      color: #007bff;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0 10px; // Adjust spacing as needed
+
+        a {
+          text-decoration: none;
+          color: white;
+          padding: 1rem;
+          display: block;
+          transition: background-color 0.3s, color 0.3s;
+
+          &:hover {
+            color: #ffffff;
+            background-color: #03ff92;
+          }
+        }
+      }
+    }
+  }
+
+  .toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+
+    .toggle-button {
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      border-radius: 2px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #019354;
+      z-index: 100;
+
+      &.active {
+        display: flex;
+      }
+
+      ul {
+        flex-direction: column;
+        width: 100%;
+
+        li {
+          text-align: center;
+
+          a {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+
+    .toggle {
+      display: flex;
     }
   }
 }

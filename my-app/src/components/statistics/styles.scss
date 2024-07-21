@@ -1,0 +1,81 @@
+/* src/components/StatsSection/StatsSection.scss */
+.stats-section {
+    background-color: #0e0f10;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+  
+    .stats-heading {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+  
+      @media (min-width: 768px) {
+        font-size: 2.5rem;
+      }
+  
+      @media (min-width: 1024px) {
+        font-size: 3rem;
+      }
+    }
+  
+    .stats-subheading {
+      font-size: 1rem;
+      margin-bottom: 40px;
+      color: #b0b0b0;
+  
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+      }
+  
+      @media (min-width: 1024px) {
+        font-size: 1.5rem;
+      }
+    }
+  
+    .stats-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+  
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+  
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .stat-value {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ffffff;
+  
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+  
+        @media (min-width: 1024px) {
+          font-size: 3.5rem;
+        }
+      }
+  
+      .stat-description {
+        font-size: 1rem;
+        color: #b0b0b0;
+  
+        @media (min-width: 768px) {
+          font-size: 1.2rem;
+        }
+  
+        @media (min-width: 1024px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  

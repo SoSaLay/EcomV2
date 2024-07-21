@@ -1,0 +1,42 @@
+/* src/components/FAQAccordion/FAQAccordion.scss */
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    .chakra-accordion__item {
+      border: none;
+  
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #e2e8f0;
+      }
+    }
+  
+    .chakra-accordion__button {
+      padding: 16px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2d3748;
+  
+      &:hover {
+        background-color: #e2e8f0;
+      }
+  
+      .chakra-accordion__icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    .chakra-accordion__panel {
+      padding: 16px 24px;
+      background-color: #f7fafc;
+      color: #2d3748;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+  

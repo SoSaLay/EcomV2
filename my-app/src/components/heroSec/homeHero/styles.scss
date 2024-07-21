@@ -1,0 +1,57 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;  // Adjust this value to change the height
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column; // Stack items vertically
+  align-items: center;
+  justify-content: flex-start; // Align items to the top
+  color: #fff;
+  text-align: center;
+  padding: 20px; // Add padding to create space at the top
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Add overlay for readability */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px; // Adjust this value to create space from the top
+}
+
+.hero-heading {
+  font-size: 3rem;
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 5rem;
+  }
+  margin-bottom: 20px;
+}
+
+.hero-subheading {
+  font-size: 1.5rem;
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+  }
+  margin-bottom: 30px;
+}
+
+.hero-cta {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}

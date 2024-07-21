@@ -1,9 +1,20 @@
 import React from 'react';
+import AboutHero from '../components/heroSec/aboutHero/about';
 
-const meetUs = ()=> {
-return <h1>Meet Us!</h1>
+
+const MeetUs = ()=> {
+return (
+
+<div> 
+
+<AboutHero/>
+
+</div>
+
+
+)
 
 };
 
 
-export default meetUs;
+export default MeetUs;

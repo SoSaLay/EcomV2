@@ -1,0 +1,55 @@
+/* src/components/StepComponent/StepComponent.scss */
+.step-component {
+    background-color: #f3f4f6;
+    padding: 40px 20px;
+    border-radius: 8px;
+
+  
+    .steps-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+
+      
+    }
+
+   
+  
+    .step-content {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      padding: 20px 0;
+      border-bottom: 1px solid #e0e0e0;
+  
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+  
+      .step-image {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+      }
+  
+      .step-details {
+        .step-subtitle {
+          color: #5e5ee6;
+          margin-bottom: 5px;
+        }
+  
+        .step-title {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+          color: #000000;
+        }
+  
+        .step-description {
+          color: #333333;
+        }
+      }
+    }
+  }
+  

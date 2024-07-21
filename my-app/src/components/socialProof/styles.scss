@@ -1,0 +1,36 @@
+/* src/components/SocialProof/SocialProof.scss */
+.social-proof {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  
+    .social-proof-heading {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+  
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+  
+    .social-proof-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+  
+      .logo {
+        max-width: 100px;
+        height: auto;
+  
+        @media (min-width: 768px) {
+          max-width: 150px;
+        }
+  
+        @media (min-width: 1024px) {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+  

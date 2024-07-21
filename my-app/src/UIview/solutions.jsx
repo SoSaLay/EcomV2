@@ -1,9 +1,9 @@
 import React from 'react';
 
-const solutions = ()=> {
+const Solutions = ()=> {
 return <h1>Research Solutions</h1>
 
 };
 
 
-export default solutions;
+export default Solutions;

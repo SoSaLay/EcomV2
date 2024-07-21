@@ -1,0 +1,104 @@
+/* src/components/CarouselComponent/CarouselComponent.scss */
+.carousel-container {
+  .slick-slider {
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+  }
+
+  .slick-prev, .slick-next {
+    background-color: #5e5ee6;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  
+
+  .slick-prev:before, .slick-next:before {
+    color: white;
+    font-size: 20px;
+  }
+
+  .slick-dots {
+    bottom: -5px;
+    padding-bottom: 15px;
+
+    li button:before {
+      font-size: 12px;
+      color: #5e5ee6;
+    }
+
+    li.slick-active button:before {
+      color: #5e5ee6;
+    }
+  }
+
+  .carousel-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &.primary {
+      background-color: #f0f9ff;
+    }
+
+    &.secondary {
+      background-color: #e0f7fa;
+    }
+
+    .card-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .card-content {
+      .card-name {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: #333333;
+      }
+
+      .card-board {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #5e5ee6;
+      }
+
+      .card-subject {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #000000;
+      }
+
+      .card-quote {
+        font-size: 0.9rem;
+        color: #666666;
+      }
+    }
+  }
+}
+
+.slick-prev {
+  left: -1px; // Adjust position to ensure arrow is within the container
+}
+
+.slick-next {
+  right: -1px; // Adjust position to ensure arrow is within the container
+}
