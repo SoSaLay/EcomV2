@@ -6,26 +6,38 @@ import styles from './styles.scss';
 
 const testimonials = [
   {
-    image: '/path/to/placeholder1.png', // Placeholder image
-    name: 'Dev Shah',
-    board: 'ICSE Board',
-    subject: 'Maths : 100',
-    quote: 'Sir is amazing, he let me stay at his place till 3am so that I can work on maths'
+    image: "smiling-young-redhead-ginger-girl-with-freckles-isolated-olive-green-wall-with-copy-space_141793-117849.avif",
+    name: 'Olivia Martinez',
+    job: 'Corporate Strategy Manager',
+    quote: 'Enabled healthcare businesses to successfully enter new software market through precise demographic research'
   },
   {
-    image: '/path/to/placeholder2.png', // Placeholder image
-    name: 'Rahul Rathava',
-    board: 'ICSE Board',
-    subject: 'Physics : 94',
-    quote: 'I was never interested in maths but sir really helped me'
+    image: 'african-woman-successful-entrepreneur-wearing-glasses-face-portrait_53876-148050.jpg',
+    name: 'Emma Harris',
+    job: 'Equity Research Analyst',
+    quote: 'Created a custom investment mix, leading to a 35% improvement in overall returns over a 9-month period'
   },
   {
-    image: '/path/to/placeholder3.png', // Placeholder image
-    name: 'Rahul Rathava',
-    board: 'HSC Board',
-    subject: 'Physics : 94',
-    quote: 'Sir is amazing, he let me stay at his place till 3am so that I can work on maths'
+    image: 'lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.avif', // Placeholder image
+    name: 'Isabella Lee',
+    job: 'Marketing Manager',
+    quote: 'Implemented a actionable growth strategy that doubled market share within 18 months for fintech platform'
+  },
+  {
+    image: 'curly-man-with-broad-smile-shows-perfect-teeth-being-amused-by-interesting-talk-has-bushy-curly-dark-hair-stands-indoor-against-white-blank-wall_273609-17092.avif', // Placeholder image
+    name: 'Daniel Wright',
+    job: 'Portfolio Manager',
+    quote: 'Increased investment portfolio returns by identifying undervalued assets through comprehensive market analysis.'
+  },
+  {
+    image: 'portrait-smiling-charming-young-man-grey-t-shirt-standing-against-plain-background_23-2148213406.avif',
+    name: 'William Martin',
+    job: 'Customer Experience Manage',
+    quote: 'Improved customer satisfaction by personalizing service offerings based on consumer behavior insights'
   }
+
+
+
 ];
 
 const CarouselComponent = () => {

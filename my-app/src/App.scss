@@ -1,11 +1,45 @@
 /* src/App.scss */
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Global styles
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #eff6f5; // Red background
+  margin: 0;
+  padding: 0;
+}
+
+// Increase paragraph text size
+p {
+  font-size: 1.1rem; // Adjust this value as needed
+  line-height: 1.6;
+}
+
+// App container
 .app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Main content
+.main-content {
+  flex: 1;
+  padding: 0 15px; // Add some padding on mobile
+
+  // Add gutters for desktop
+  @media (min-width: 1024px) {
+    max-width: 1200px; // Set a max-width for content
+    margin: 0 auto; // Center the content
+    padding: 0 50px; // Increase padding for gutters
   }
-  
-  .main-content {
-    flex: 1;
-  }
-  
+}
+
+// You can add more global styles here
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+// Add any other global styles you need

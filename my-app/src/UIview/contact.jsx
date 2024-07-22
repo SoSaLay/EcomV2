@@ -1,7 +1,15 @@
 import React from "react";
+import ContactHero from "../components/heroSec/contactHero/contact";
 
 const Contact = () => {
-    return <h1> Contact Page</h1>
+    return(
+
+<div> 
+    <ContactHero/>
+</div>
+
+
+    )
 
 }
 

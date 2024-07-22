@@ -4,7 +4,7 @@ import styles from './styles.scss';
 const SocialProof = () => {
   return (
     <section className="social-proof">
-      <h2 className="social-proof-heading">Outreach that has led to closed deals with</h2>
+      <h2 className="social-proof-heading">The Smartest Investors and Startups Teams Use MarketInfoZ to Win</h2>
       <div className="social-proof-logos">
         <img src="./bet.png" alt="Company 1 Logo" className="logo" />
         <img src="./ycom.png" alt="Company 2 Logo" className="logo" />

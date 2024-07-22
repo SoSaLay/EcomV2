@@ -5,46 +5,40 @@ import styles from './styles.scss';
 
 const testimonials = [
   {
-    image: '/path/to/placeholder1.png', // Placeholder image
-    name: 'Jacob Jones',
-    role: 'UI/UX Designer',
-    company: '',
-    testimonial: 'I absolutely adore utilising travel apps for all of my journeys! They make navigation and planning so much easier and more convenient.'
+    image: 'avatar-svgrepo-com.svg',
+    name: 'Jacob',
+    role: 'Investment Strategist',
+    testimonial: 'Increased ROI by 25% through strategic investment planning'
   },
   {
-    image: '/path/to/placeholder2.png', // Placeholder image
-    name: 'Robert Fox',
-    role: 'Visual Designer',
-    company: 'Queen Studio',
-    testimonial: 'I absolutely adore utilising travel apps for all of my journeys! They make navigation and planning so much easier and more convenient.'
+    image: "avatar-svgrepo-com (1).svg",
+    name: 'Robert',
+    role: 'Business Development Executive',
+    testimonial: 'Boosted annual revenue by $1M through innovative business solutions'
   },
   {
-    image: '/path/to/placeholder3.png', // Placeholder image
-    name: 'Kristin Watson',
-    role: 'Product Design',
-    company: 'Meta',
-    testimonial: 'I absolutely adore utilising travel apps for all of my journeys! They make navigation and planning so much easier and more convenient.'
+    image: "avatar-svgrepo-com (2).svg",
+    name: 'Kristin',
+    role: 'Supply Chain Director',
+    testimonial: 'Cut operational costs by 15% via streamlined supply chain processes.'
   },
   {
-    image: '/path/to/placeholder4.png', // Placeholder image
-    name: 'Brooklyn Simmons',
-    role: 'Product Design',
-    company: 'Netflix',
-    testimonial: 'I absolutely adore utilising travel apps for all of my journeys! They make navigation and planning so much easier and more convenient.'
+    image: "avatar-svgrepo-com (3).svg",
+    name: 'Brooklyn',
+    role: 'Marketing Director',
+    testimonial: 'Grew client base by 30% with targeted marketing campaigns'
   },
   {
-    image: '/path/to/placeholder5.png', // Placeholder image
-    name: 'Cameron Williamson',
-    role: 'Product Design',
-    company: '',
-    testimonial: 'I absolutely adore utilising travel apps for all of my journeys! They make navigation and planning so much easier and more convenient.'
+    image: "avatar-svgrepo-com (4).svg",
+    name: 'Cameron',
+    role: 'Operations Manager',
+    testimonial: 'Achieved a 40% reduction in project turnaround time through process optimization'
   },
   {
-    image: '/path/to/placeholder6.png', // Placeholder image
-    name: 'Bhuvneshwar Kumar',
-    role: '',
-    company: '',
-    testimonial: 'I absolutely adore utilising travel apps for all of my journeys! They make navigation and planning so much easier and more convenient.'
+    image: "avatar-svgrepo-com (5).svg",
+    name: 'Bhuvneshwar',
+    role: 'Global Investment Advisor',
+    testimonial: 'Expanded international reach by 25% through effective global investment strategies.'
   }
 ];
 

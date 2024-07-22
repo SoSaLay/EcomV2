@@ -17,16 +17,19 @@ import {
           <TableCaption>Imperial to metric conversion factors</TableCaption>
           <Thead>
             <Tr>
-              <Th>To convert</Th>
-              <Th>into</Th>
-              <Th isNumeric>multiply by</Th>
+              <Th>Business</Th>
+              <Th>Services</Th>
+              <Th>Services</Th>
+              <Th>Services</Th>
+            
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
               <Td>inches</Td>
-              <Td>millimetres (mm)</Td>
-              <Td isNumeric>25.4</Td>
+              <Td>millimetres ($240)</Td>
+              <Th>Services</Th>
+              <Th>Services</Th>
             </Tr>
             <Tr>
               <Td>feet</Td>

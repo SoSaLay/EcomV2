@@ -12,6 +12,7 @@ import CarouselComponent from "../components/carousel/carousel"
 import TestimonialsSection from '../components/homeTestimonial/homeTestimonial';
 import FAQAccordion from '../components/accordion/accordion';
 import Button from '../components/button/button';
+import ConversionTable from '../components/table/table';
 
 const Home = ()=> {
 
@@ -29,8 +30,8 @@ const handleCTAClick = () => {
     <div>
       <Hero
         backgroundImage="/futurism-perspective.jpeg"
-        heading="Goal-Based Research for Business and Investment Clients        "
-        subheading="Use our Actionable Intelligence for Smarter Decisions"
+        heading="Goal-Based Research for Business & Investment Clients        "
+        subheading="Actionable Intelligence for Smarter Decisions"
         ctaText="Start Custom Report"
         ctaOnClick={handleCTAClick}
       />
@@ -47,15 +48,18 @@ const handleCTAClick = () => {
 
     <StepComponent />
 
+
     <TestimonialsSection/>
 
     <Heading content="Frequently Asked Questions" style={{ color: 'black' }} />
 
     <FAQAccordion/>
    
-    <Button onClick={handleButtonClick} className="primary-button">
-        Let's Start Work!
-    </Button>
+    <Button 
+  text="Let's Start Work" 
+  onClick={() => console.log('Button clicked')} 
+  type="submit"
+/>
 
     </div>
 

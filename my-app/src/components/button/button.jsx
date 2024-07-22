@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './styles.scss'; 
 
-function Button({ children, onClick, className }) {
+const Button = ({ text, onClick, type = 'button' }) => {
   return (
-    <button onClick={onClick} className={`button ${className}`}>
-      {children}
-    </button>
+    <div className="button-container">
+      <button className="custom-button" type={type} onClick={onClick}>
+        {text}
+      </button>
+    </div>
   );
-}
+};
 
 export default Button;
