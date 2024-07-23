@@ -128,6 +128,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to the API!');
 });
 
+app.get('*', (req,res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
+
 app.get('/products', async (req, res) => {
     try {
         const sql = 'SELECT * FROM products';
