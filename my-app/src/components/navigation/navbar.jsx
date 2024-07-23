@@ -1,14 +1,13 @@
 import React, { useState, useContext } from 'react';
 import {Link} from "react-router-dom"
 import userIcon from '../../asset/account-svgrepo-com.svg';
-import { AuthContext } from '../../reactGlobal/AuthContext';
 import styles from './styles.scss'; 
 
 
 const NavBar = () => {
     const [menuActive, setMenuActive] = useState(false);
     const [cartVisible, setCartVisible] = useState(false);
-    const { user, signOut } = useContext(AuthContext);
+  
   
     const toggleMenu = () => {
       setMenuActive(!menuActive);

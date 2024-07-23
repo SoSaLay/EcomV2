@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AuthProvider } from './reactGlobal/AuthContext';
+
 import Footer from './components/footer/footer';
 import NavBar from './components/navigation/navbar';
 
@@ -58,7 +58,7 @@ const App = () => {
 
     return (
         <ChakraProvider> 
-        <AuthProvider>
+    
         <Router>
 
         <div className="app-container">
@@ -85,7 +85,7 @@ const App = () => {
          </div>
 
         </Router>
-        </AuthProvider>
+        
         </ChakraProvider>
     );
 };
