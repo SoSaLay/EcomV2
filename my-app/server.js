@@ -125,11 +125,11 @@ app.post('/api/login', (req, res) => {
 
 
 
-app.get('/', (req, res) => {
-    res.send('Welcome to the API!');
-});
+// app.get('/', (req, res) => {
+//     res.send('Welcome to the API!');
+// });
 
-app.get('*', (req,res)=>{
+app.get('/', (req,res)=>{
     res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
