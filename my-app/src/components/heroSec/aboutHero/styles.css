@@ -80,4 +80,29 @@
 }
 .about-hero .about-hero-icons .special-icon .cta-button:hover {
   background-color: #024aa8;
+}
+@media (max-width: 768px) {
+  .about-hero .about-hero-content {
+    flex-direction: column;
+  }
+  .about-hero .about-hero-content h2 {
+    font-size: 2rem;
+  }
+  .about-hero .about-hero-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  .about-hero .about-hero-content .about-hero-image {
+    order: 2;
+    margin-left: 0;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .about-hero .about-hero-content .about-hero-image img {
+    max-width: 80%;
+  }
+  .about-hero .about-hero-icons .icon {
+    min-width: 100%;
+    margin: 20px 0;
+  }
 }/*# sourceMappingURL=styles.css.map */

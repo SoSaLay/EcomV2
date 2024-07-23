@@ -1,7 +1,5 @@
-
 .about-hero {
     padding: 40px 20px;
-    // background: url('path/to/background-image.svg') no-repeat center center;
     background-size: cover;
     position: relative;
   
@@ -51,15 +49,14 @@
         min-width: 250px;
         margin: 20px;
         text-align: center;
-
   
         img {
           width: 100px;
           height: 100px;
           margin-bottom: 10px;
           display: block;
-         margin-left: auto;
-        margin-right: auto;
+          margin-left: auto;
+          margin-right: auto;
         }
   
         h3 {
@@ -96,5 +93,38 @@
         }
       }
     }
-  }
   
+    // Media query for mobile devices
+    @media (max-width: 768px) {
+      .about-hero-content {
+        flex-direction: column;
+  
+        h2 {
+          font-size: 2rem;
+        }
+  
+        p {
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+  
+        .about-hero-image {
+          order: 2; // Push image to bottom
+          margin-left: 0;
+          margin-top: 30px;
+          text-align: center;
+  
+          img {
+            max-width: 80%; // Make image slightly bigger
+          }
+        }
+      }
+  
+      .about-hero-icons {
+        .icon {
+          min-width: 100%;
+          margin: 20px 0;
+        }
+      }
+    }
+  }

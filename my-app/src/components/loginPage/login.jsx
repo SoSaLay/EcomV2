@@ -4,11 +4,45 @@ import './styles.scss';
 
 const LoginComponent = () => {
   const [isActive, setIsActive] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: ''
+  });
+  const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
   const [loggedInUser, setLoggedInUser] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const validateForm = (isSignUp) => {
+    let newErrors = {};
+
+    if (isSignUp && !formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleRegister = () => {
     setIsActive(true);
@@ -20,34 +54,38 @@ const LoginComponent = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5000/api/signup', { name, email, password });
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage(error.response.data.error);
+    if (validateForm(true)) {
+      try {
+        const response = await axios.post('http://localhost:5000/api/signup', formData);
+        setMessage(response.data.message);
+      } catch (error) {
+        setMessage(error.response.data.error);
+      }
     }
   };
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        localStorage.setItem('token', data.token);
-        setLoggedInUser(data.userName);
-        setMessage(`Welcome, ${data.userName}!`);
-      } else {
-        throw new Error(data.error);
+    if (validateForm(false)) {
+      try {
+        const response = await fetch('http://localhost:5000/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: formData.email, password: formData.password }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          localStorage.setItem('token', data.token);
+          setLoggedInUser(data.userName);
+          setMessage(`Welcome, ${data.userName}!`);
+        } else {
+          throw new Error(data.error);
+        }
+      } catch (error) {
+        setMessage(error.message);
       }
-    } catch (error) {
-      setMessage(error.message);
     }
   };
 
@@ -66,21 +104,26 @@ const LoginComponent = () => {
   return (
     <div className={`login-container ${isActive ? 'active' : ''}`}>
       <div className="form-container sign-up">
-        <form onSubmit={handleSignUp}>
+        <form onSubmit={handleSignUp} noValidate>
           <h1>Create Account</h1>
           <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} />
+          {errors.name && <span className="error">{errors.name}</span>}
+          <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} />
+          {errors.email && <span className="error">{errors.email}</span>}
+          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleInputChange} />
+          {errors.password && <span className="error">{errors.password}</span>}
           <button type="submit">Sign Up</button>
         </form>
       </div>
       <div className="form-container sign-in">
-        <form onSubmit={handleSignIn}>
+        <form onSubmit={handleSignIn} noValidate>
           <h1>Sign In</h1>
           <span>or use your email password</span>
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} />
+          {errors.email && <span className="error">{errors.email}</span>}
+          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleInputChange} />
+          {errors.password && <span className="error">{errors.password}</span>}
           <a href="#">Forget Your Password?</a>
           <button type="submit">Sign In</button>
         </form>

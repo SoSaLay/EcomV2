@@ -1,8 +1,16 @@
 
 import React from 'react';
 import styles from './styles.scss'; 
+import { useNavigate } from 'react-router-dom';
 
 const AboutHero = () => {
+
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/contact');
+      };
+
+
     return (
       <div className="about-hero">
         <div className="about-hero-content">
@@ -40,7 +48,7 @@ const AboutHero = () => {
             <img src="upgrade-svgrepo-com.svg" alt="Rocket Ship" />
             <h3>Services</h3>
             <p>We offer personalized research services and ongoing support to meet your unique needs.</p>
-            <button className="cta-button">Learn More</button>
+            <button className="cta-button" onClick={handleClick}>Learn More</button>
           </div>
         </div>
       </div>

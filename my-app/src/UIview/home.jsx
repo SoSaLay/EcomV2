@@ -14,18 +14,18 @@ import FAQAccordion from '../components/accordion/accordion';
 import Button from '../components/button/button';
 import ConversionTable from '../components/table/table';
 import BlankSpace from '../components/blankSpace/blank';
-
+import { useNavigate } from 'react-router-dom';
 
 const Home = ()=> {
+    const navigate = useNavigate();
 
-
-const handleCTAClick = () => {
-    console.log('CTA button clicked!');
-  };
-
-  const handleButtonClick = () => {
-    console.log('Button clicked!');
-  };
+    const SolutionsClick = () => {
+        navigate('/solutions');
+      };
+      
+      const ContactClick = () => {
+        navigate('/contact');
+      };
 
   return (
 
@@ -35,7 +35,7 @@ const handleCTAClick = () => {
         heading="Goal-Based Research for Business & Investment Clients        "
         subheading="Actionable Intelligence for Smarter Decisions"
         ctaText="Start Custom Report"
-        ctaOnClick={handleCTAClick}
+        ctaOnClick={SolutionsClick}
       />
 
     <SocialProof/>
@@ -66,7 +66,7 @@ const handleCTAClick = () => {
    
     <Button 
   text="Let's Start Work" 
-  onClick={() => console.log('Button clicked')} 
+  onClick={ContactClick}
   type="submit"
 />
 

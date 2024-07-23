@@ -21,12 +21,12 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    max-width: 800px;
+    max-width: 100%;
     padding: 0 20px;
   }
 
   &-heading {
-    font-size: 4rem;
+    font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 1rem;
     color: #0049f4;
@@ -34,7 +34,7 @@
   }
 
   &-subheading {
-    font-size: 2rem;
+    font-size: clamp(1rem, 3vw, 2rem);
     font-weight: 500;
     margin-bottom: 2rem;
     color: #000000;
@@ -52,7 +52,7 @@
     border: none; 
     border-radius: 15px; 
     padding: 10px 20px; 
-    font-size: 1.3rem; 
+    font-size: clamp(1rem, 2vw, 1.3rem);
     cursor: pointer; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: all 0.3s ease;
@@ -66,7 +66,30 @@
   
   .buttonArea {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
+}
 
+@media (max-width: 768px) {
+  .hero {
+    &-content {
+      padding: 0 10px;
+    }
+
+    &-heading {
+      margin-bottom: 0.5rem;
+    }
+
+    &-subheading {
+      margin-bottom: 1rem;
+    }
+
+    button[type="submit"] {
+      padding: 8px 16px;
+    }
+
+    .buttonArea {
+      margin-bottom: 20px;
+    }
+  }
 }
