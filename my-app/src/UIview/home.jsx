@@ -13,6 +13,8 @@ import TestimonialsSection from '../components/homeTestimonial/homeTestimonial';
 import FAQAccordion from '../components/accordion/accordion';
 import Button from '../components/button/button';
 import ConversionTable from '../components/table/table';
+import BlankSpace from '../components/blankSpace/blank';
+
 
 const Home = ()=> {
 
@@ -38,13 +40,20 @@ const handleCTAClick = () => {
 
     <SocialProof/>
 
+    <BlankSpace height="100px" width="100%" backgroundColor="white"/>
+
     <Heading content="Ensuring High Earners Make Smarter Decisions" style={{ color: 'black' }} />
 
     <BenefitsSection/>
 
     <CarouselComponent/>
 
+    <BlankSpace height="100px" width="100%" backgroundColor="white"/>
+
+
     <StatsSection/>
+
+    <BlankSpace />
 
     <StepComponent />
 
@@ -61,6 +70,7 @@ const handleCTAClick = () => {
   type="submit"
 />
 
+<BlankSpace height="100px" width="100%" backgroundColor="white"/>
     </div>
 
 

@@ -1,0 +1,21 @@
+.testimonials-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+.testimonials-section .testimonial-card {
+  flex: 1 1 calc(33.333% - 20px); /* Three cards per row */
+  margin: 10px;
+}
+@media (max-width: 1024px) {
+  .testimonials-section .testimonial-card {
+    flex: 1 1 calc(50% - 20px); /* Two cards per row on tablets */
+  }
+}
+@media (max-width: 768px) {
+  .testimonials-section .testimonial-card {
+    flex: 1 1 calc(100% - 20px); /* One card per row on mobile */
+  }
+}/*# sourceMappingURL=styles.css.map */

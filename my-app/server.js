@@ -4,13 +4,17 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const util = require('util');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
+
 
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 const pool = mysql.createPool({
@@ -22,7 +26,6 @@ const pool = mysql.createPool({
     port: process.env.DB_PORT
 });
 
-// Promisify for Node.js async/await.
 pool.query = util.promisify(pool.query);
 
 // Test database connection
@@ -35,35 +38,91 @@ pool.getConnection((err, connection) => {
     connection.release();
 });
 
-app.post('/register', (req, res) => {
-    const { email, password } = req.body;
-    const hashedPassword = bcrypt.hashSync(password, 10);
 
-    const sql = `INSERT INTO users (email, password) VALUES (?, ?)`;
-    db.query(sql, [email, hashedPassword], (err, results) => {
-        if (err) {
-            return res.status(500).send('Error registering user');
+app.post('/api/signup', async (req, res) => {
+    try {
+        const { name, email, password } = req.body;
+
+        // Basic input validation
+        if (!name || !email || !password) {
+            return res.status(400).json({ error: 'Name, email, and password are required' });
         }
-        res.status(201).send('User registered');
-    });
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        
+        pool.query(
+            'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
+            [name, email, hashedPassword],
+            (error, result) => {
+                if (error) {
+                    console.error('Signup error:', error);
+                    if (error.code === 'ER_DUP_ENTRY') {
+                        return res.status(409).json({ error: 'Email already exists' });
+                    }
+                    return res.status(500).json({ error: 'Error creating user: ' + error.message });
+                }
+                res.status(201).json({ message: 'User created successfully' });
+            }
+        );
+    } catch (error) {
+        console.error('Signup error:', error);
+        res.status(500).json({ error: 'Error creating user: ' + error.message });
+    }
+});
+  
+app.post('/api/login', (req, res) => {
+    console.log('Login route accessed');
+    const { email, password } = req.body;
+
+    // Basic input validation
+    if (!email || !password) {
+        console.log('Missing email or password');
+        return res.status(400).json({ error: 'Email and password are required' });
+    }
+    
+    console.log('Querying database for user');
+    pool.query(
+        'SELECT * FROM users WHERE email = ?',
+        [email],
+        (error, results) => {
+            if (error) {
+                console.error('Database query error:', error);
+                return res.status(500).json({ error: 'Error logging in' });
+            }
+
+            console.log('Database query completed');
+
+            if (results.length === 0) {
+                console.log('No user found with the provided email');
+                return res.status(401).json({ error: 'Invalid credentials' });
+            }
+            
+            const user = results[0];
+            console.log('User found, comparing passwords');
+
+            bcrypt.compare(password, user.password, (bcryptError, isMatch) => {
+                if (bcryptError) {
+                    console.error('Bcrypt comparison error:', bcryptError);
+                    return res.status(500).json({ error: 'Error during login process' });
+                }
+
+                if (!isMatch) {
+                    console.log('Password does not match');
+                    return res.status(401).json({ error: 'Invalid credentials' });
+                }
+
+                console.log('Password matched, generating token');
+                const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+                
+                console.log('Sending successful login response');
+                res.json({ token, userName: user.name });
+            });
+        }
+    );
 });
 
-// Login endpoint
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
 
-    const sql = `SELECT * FROM users WHERE email = ?`;
-    db.query(sql, [email], (err, results) => {
-        if (err) {
-            return res.status(500).send('Error logging in');
-        }
-        if (results.length === 0 || !bcrypt.compareSync(password, results[0].password)) {
-            return res.status(401).send('Invalid credentials');
-        }
-        const token = jwt.sign({ userId: results[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.status(200).send({ token });
-    });
-});
+
 
 app.get('/', (req, res) => {
     res.send('Welcome to the API!');

@@ -1,0 +1,23 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 100px;
+}
+
+.custom-button {
+  background-color: #4c01b2;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.custom-button:hover {
+  background-color: #be8fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,35 @@
+/* src/App.scss */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #eff6f5;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 0 15px;
+}
+@media (min-width: 1024px) {
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+}/*# sourceMappingURL=App.css.map */

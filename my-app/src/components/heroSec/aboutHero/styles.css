@@ -1,0 +1,83 @@
+.about-hero {
+  padding: 40px 20px;
+  background-size: cover;
+  position: relative;
+}
+.about-hero .about-hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+.about-hero .about-hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  flex-basis: 100%;
+  text-align: center;
+}
+.about-hero .about-hero-content p {
+  font-size: 1.2rem;
+  flex: 1;
+  margin-bottom: 20px;
+}
+.about-hero .about-hero-content .about-hero-image {
+  flex: 1;
+  text-align: right;
+  margin-left: 20px;
+}
+.about-hero .about-hero-content .about-hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.about-hero .about-hero-icons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.about-hero .about-hero-icons .icon {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+  text-align: center;
+}
+.about-hero .about-hero-icons .icon img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-hero .about-hero-icons .icon h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.about-hero .about-hero-icons .icon p {
+  font-size: 1rem;
+  color: #333;
+}
+.about-hero .about-hero-icons .special-icon {
+  background-color: #8fffee;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+}
+.about-hero .about-hero-icons .special-icon .cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #0366d6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.about-hero .about-hero-icons .special-icon .cta-button:hover {
+  background-color: #024aa8;
+}/*# sourceMappingURL=styles.css.map */

@@ -5,8 +5,7 @@ import Footer from './components/footer/footer';
 import NavBar from './components/navigation/navbar';
 
 
-import SignIn from './reactGlobal/SignIn';
-import SignUp from './reactGlobal/SignUp';
+
 import Home from './UIview/home'
 import Contact from './UIview/contact';
 import MeetUs from './UIview/meetUs';
@@ -21,6 +20,8 @@ import Cart from './components/cart/cart';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import axios from 'axios';
+import LoginPage from './components/loginPage/login';
+
 
 
 const stripePromise = loadStripe('pk_test_51Pf0JXRu7i52rQN4EzQNTVOSXVrjKK85hBmlDrceFfh82wUoSKkPzcIlj6QGzt25zU5NncV8YvuxinYoh3AG03ed00oiTyboND');
@@ -53,6 +54,8 @@ const App = () => {
         // Handle Stripe payment process with clientSecret
     };
 
+    
+
     return (
         <ChakraProvider> 
         <AuthProvider>
@@ -72,6 +75,7 @@ const App = () => {
                     <Route path="/meetUs" element={<MeetUs />} />
                     <Route path="/solutions" element={<Solutions />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/login" element={<LoginPage />} />
                 </Routes>
 
         </div>

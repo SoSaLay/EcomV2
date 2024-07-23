@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import {Link} from "react-router-dom"
-
 import userIcon from '../../asset/account-svgrepo-com.svg';
 import { AuthContext } from '../../reactGlobal/AuthContext';
 import styles from './styles.scss'; 
@@ -22,11 +21,9 @@ const NavBar = () => {
     return (
       <nav className="navbar">
         <div className="navbar-left">
-          {user ? (
-            <img src={userIcon} alt="User" className="icon" onClick={signOut} />
-          ) : (
-            <img src={userIcon} alt="User" className="icon" onClick={() => window.location.href='/signin'} />
-          )}
+        <Link to="/login">
+            <img src={userIcon} alt="User" className="icon" />
+          </Link>
         </div>
         <div className={`navbar-links ${menuActive ? 'active' : ''}`}>
           <ul>
@@ -44,6 +41,7 @@ const NavBar = () => {
           <div className="toggle-button"></div>
           <div className="toggle-button"></div>
         </div>
+
       </nav>
     );
   };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cart from '../components/cart/cart';
 import ProductList from '../components/products/productsList';
+import BlankSpace from '../components/blankSpace/blank';
 
 const Solutions = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -35,6 +36,8 @@ const Solutions = () => {
             {/* <h2>Us Vs Them</h2>
 
              <ConversionTable/> */}
+
+<BlankSpace height="250px" width="100%" backgroundColor="white"/>
         
         </div>
     );

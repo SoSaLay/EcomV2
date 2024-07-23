@@ -1,0 +1,104 @@
+/* Navigation Section */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #019354;
+  color: white;
+  height: 80px;
+  padding: 0 20px;
+  position: relative;
+  font-family: "Oswald", sans-serif;
+}
+.navbar .navbar-left {
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-left .icon {
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.navbar .navbar-left .icon:hover {
+  color: #03ff92;
+}
+.navbar .brandName {
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+}
+.navbar .brandName a {
+  text-decoration: none;
+  color: inherit;
+}
+.navbar .navbar-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+.navbar .navbar-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navbar .navbar-links ul li {
+  margin: 0 10px;
+}
+.navbar .navbar-links ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+.navbar .navbar-links ul li a:hover {
+  color: #ffffff;
+  background-color: #03ff92;
+}
+.navbar .toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+.navbar .toggle .toggle-button {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #019354;
+    z-index: 100;
+  }
+  .navbar .navbar-links.active {
+    display: flex;
+  }
+  .navbar .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar .navbar-links ul li {
+    text-align: center;
+  }
+  .navbar .navbar-links ul li a {
+    padding: 0.5rem 1rem;
+  }
+  .navbar .toggle {
+    display: flex;
+  }
+}/*# sourceMappingURL=styles.css.map */
