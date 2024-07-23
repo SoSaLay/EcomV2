@@ -6,6 +6,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const util = require('util');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 require('dotenv').config();
 
 
@@ -129,8 +130,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('*', (req,res)=>{
-    res.sendFile(path.join(__dirname, '../build/index.html'))
+    res.sendFile(path.join(__dirname, './build/index.html'))
 })
+
+app.use(express.static(path.join(__dirname, 'build')))
 
 app.get('/products', async (req, res) => {
     try {
@@ -142,6 +145,9 @@ app.get('/products', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
+
+
 
 app.post('/checkout', async (req, res) => {
     const { items } = req.body;
